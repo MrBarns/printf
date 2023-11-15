@@ -48,5 +48,5 @@ int print_cent(va_list args)
 {
 	(void) args;
 
-	return (write(1, "%", 1));
+	return (write(1, "%%", 1));
 }
