@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[x] == '%')
 		{
-		        spec_result = handle_specs(format, ++x, args);
+			spec_result = handle_specs(format, ++x, args);
 			if (spec_result < 0)
 				return (-1);
 			printed_chars += spec_result;
