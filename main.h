@@ -6,21 +6,22 @@
 #include <stdlib.h>
 
 
-/* Testers */
-/* #include <stdio.h> */
-
 /*
- * mapper - maps format specifiers to their handler functions
+ * struct mapper - maps format specifiers to their handler functions
  *
  * @spec: specifier
  * @func: handler function
+ *
+ * Description: Mapper groups format specifiers to their handler functions for
+ * easy assignments.
  */
 
-typedef struct mapper
+struct mapper
 {
 	char spec;
-	int (*func) (va_list args);
-} Mapper;
+	int (*func)(va_list args);
+};
+typedef struct mapper Mapper;
 
 int _printf(const char *format, ...);
 

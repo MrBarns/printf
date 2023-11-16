@@ -15,10 +15,14 @@
 int handle_specs(const char *format, int x, va_list args)
 {
 	int c;
+	char spec[2];
 	Mapper mappa[] = {
 		{'c', print_char}, {'s', print_str}, {'%', print_cent},
 		{'\0', NULL}
 	};
+
+	if (format[x] == '\0')
+		return (-1);
 
 	for (c = 0; mappa[c].spec != '\0'; c++)
 	{
@@ -26,5 +30,8 @@ int handle_specs(const char *format, int x, va_list args)
 			return (mappa[c].func(args));
 	}
 
-	return (-1);
+	spec[0] = '%';
+	spec[1] = format[x];
+
+	return (write(1, spec, 2));
 }
