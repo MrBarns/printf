@@ -18,7 +18,7 @@ int handle_specs(const char *format, int x, va_list args)
 	char spec[2];
 	Mapper mappa[] = {
 		{'c', print_char}, {'s', print_str}, {'%', print_cent},
-		{'\0', NULL}
+		{'d', print_int}, {'i', print_int}, {'\0', NULL}
 	};
 
 	if (format[x] == '\0')

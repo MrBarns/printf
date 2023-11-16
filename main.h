@@ -5,6 +5,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+/* Testing */
+#include <stdio.h>
 
 /*
  * struct mapper - maps format specifiers to their handler functions
@@ -30,9 +32,10 @@ int _printf(const char *format, ...);
 int handle_specs(const char *format, int x, va_list args);
 
 
-/* Handler functions */
+/* Print functions */
 int print_char(va_list args);
 int print_str(va_list args);
 int print_cent(va_list args);
+int print_int(va_list args);
 
 #endif
